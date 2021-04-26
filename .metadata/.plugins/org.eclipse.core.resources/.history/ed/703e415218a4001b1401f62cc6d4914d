@@ -1,0 +1,7 @@
+package finalproject.tdtu;
+
+public interface InputEmployee {
+	
+	public void input();
+	public void output();
+}

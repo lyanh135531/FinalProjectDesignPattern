@@ -1,0 +1,7 @@
+package finalproject.tdtu;
+
+import java.util.ArrayList;
+
+public interface StrategySort {
+	public <Employee> void sort(ArrayList<Employee> em);
+}

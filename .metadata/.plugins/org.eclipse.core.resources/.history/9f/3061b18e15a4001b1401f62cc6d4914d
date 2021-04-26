@@ -1,0 +1,10 @@
+package finalproject.tdtu;
+
+public class DeleteId {
+	
+	private ListEmployee listE;
+	
+	public DeleteId(ListEmployee listE){
+		this.listE = listE;
+	}
+}

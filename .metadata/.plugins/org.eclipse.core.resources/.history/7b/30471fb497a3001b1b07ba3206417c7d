@@ -1,0 +1,26 @@
+package finalproject.tdtu;
+
+import java.util.Scanner;
+
+public abstract class InputEmployee {
+	
+	Employee employee;
+	
+	Scanner sc = new Scanner(System.in);
+
+	
+	public void input(){
+		System.out.print("Enter ID:");
+		employee.setId(this.sc.nextLine());
+		
+		System.out.print("Enter name:");
+		employee.setName(this.sc.nextLine());
+		
+		System.out.print("Enter phone:");
+		employee.setPhone(this.sc.nextLine());
+		
+		System.out.print("Enter salary:");
+		employee.setSalary(this.sc.nextFloat());
+	}
+	public abstract void output();
+}

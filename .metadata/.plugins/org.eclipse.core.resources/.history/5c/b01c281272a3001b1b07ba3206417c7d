@@ -1,0 +1,79 @@
+package finalproject.tdtu;
+
+import java.util.Scanner;
+
+public class Employee {
+	private String Id;
+	private String name;
+	private int phone;
+	private String position;
+	private String task;
+	private double salary;
+	
+	public Employee() {
+	}
+	
+	public Employee(String id, String name, int phone, String position, String task, double salary) {
+		super();
+		Id = id;
+		this.name = name;
+		this.phone = phone;
+		this.position = position;
+		this.task = task;
+		this.salary = salary;
+	}
+	Scanner sc = new Scanner(System.in);
+	
+	public String getId() {
+		return Id;
+	}
+
+	public void setId(String id) {
+		this.Id = sc.nextLine();
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = sc.nextLine();
+	}
+
+	public int getPhone() {
+		return phone;
+	}
+
+	public void setPhone(int phone) {
+		this.phone = sc.nextInt();
+	}
+
+	public String getPosition() {
+		return position;
+	}
+
+	public void setPosition(String position) {
+		this.position = sc.nextLine();
+	}
+
+	public String getTask() {
+		return task;
+	}
+
+	public double getSalary() {
+		return salary;
+	}
+
+	public void setSalary(double salary) {
+		this.salary = sc.nextFloat();
+	}
+
+	@Override
+	public String toString() {
+		return "Employee [Id=" + Id + ", name=" + name + ", phone=" + phone + ", position=" + position + ", task="
+				+ task + ", salary=" + salary + "]";
+	}
+	
+	
+	
+}

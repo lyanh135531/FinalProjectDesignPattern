@@ -1,0 +1,5 @@
+package finalproject.tdtu;
+
+public class MarketingStaff extends Employee{
+	
+}

@@ -1,0 +1,24 @@
+package finalproject.tdtu;
+
+public class Leader extends Employee{
+	private double responsibility;
+
+	public Leader() {
+	}
+
+	public Leader(String id, String name, int phone, String position, String task, double salary,
+			double responsibility) {
+		super(id, name, phone, position, task, salary);
+		this.responsibility = responsibility;
+	}
+
+	public double getResponsibility() {
+		return responsibility;
+	}
+
+	public void setResponsibility(double responsibility) {
+		this.responsibility = responsibility;
+	}
+	
+	
+}

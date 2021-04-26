@@ -1,0 +1,5 @@
+package finalproject.tdtu;
+
+public interface FactoryEmployee {
+	String getEmployeeType();
+}

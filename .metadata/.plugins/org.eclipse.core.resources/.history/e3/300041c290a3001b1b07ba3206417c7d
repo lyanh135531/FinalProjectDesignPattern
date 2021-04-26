@@ -1,0 +1,6 @@
+package finalproject.tdtu;
+
+public interface InOut {
+	public void input();
+	public void output();
+}

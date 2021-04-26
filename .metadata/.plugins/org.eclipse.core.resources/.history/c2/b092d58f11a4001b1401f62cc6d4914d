@@ -1,0 +1,86 @@
+package finalproject.tdtu;
+
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		menu();
+	}
+	
+	public static void menu() {
+		Scanner sc = new Scanner(System.in);
+		ListEmployee listE = new ListEmployee().getInstance();
+		int choice, type, min, max = 0, pos;
+		String findid, delid, updateid;
+		while (true) {
+			System.out.println("\n------------Menu-----------");
+			System.out.println("0: Dummy data");
+			System.out.println("1: Input new employee");
+			System.out.println("2: Display all employee");
+			System.out.println("3: Find employee by ID");
+			System.out.println("4: Delete employee by ID");
+			System.out.println("5: Update employee by ID");
+			System.out.println("6: Display employee by Salary");
+			System.out.println("7: Sort employee by Name");
+			System.out.println("8: Sort employee by Salary");
+			System.out.println("----------------------------");
+			System.out.print("Your choice: ");
+			choice = sc.nextInt();
+			switch (choice) {
+			case 0:
+				listE.dummyData();
+				break;
+			case 1:
+				System.out.println("1: Input Employee");
+				System.out.println("2: Input Marketing Staff");
+				System.out.println("3: Input Leader");
+				type = sc.nextInt();
+				if (type == 1){
+					listE.input(TypeEmployee.EMPLOYEE);
+				}
+				if (type == 2){
+					listE.input(TypeEmployee.MARKETINGSTAFF);
+				}
+				if (type == 3){
+					listE.input(TypeEmployee.LEADER);
+				}
+				break;
+			case 2: 
+				listE.display();
+				break;
+			case 3:
+				System.out.print("Enter ID: ");
+				findid = sc.next();
+				pos = listE.findId(findid);
+				if (pos < 0){
+					System.out.println("Not found!");
+				}
+				break;
+			case 4:
+				System.out.print("Enter ID: ");
+				delid = sc.next();
+				listE.deleteId(delid);
+				break;
+			case 5:
+				System.out.print("Enter ID: ");
+				updateid = sc.next();
+				listE.update(updateid);
+				break;
+			case 6:
+				System.out.print("Salary from: ");
+				min = sc.nextInt();
+				System.out.print("\tto: ");
+				max = sc.nextInt();
+				listE.findSalary(min, max);
+				break;
+			case 7:
+				listE.setStrategySort(new SortByName());
+				listE.sort();
+				break;
+			case 8:
+				listE.setStrategySort(new SortBySalary());
+				listE.sort();
+			}
+		}
+	}
+}

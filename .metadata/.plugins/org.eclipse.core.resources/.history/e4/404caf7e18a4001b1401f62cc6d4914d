@@ -1,0 +1,21 @@
+package finalproject.tdtu;
+
+import java.util.Scanner;
+
+public class DeleteId implements Command{
+	
+	private ListEmployee listE;
+	
+	public DeleteId(ListEmployee listE){
+		this.listE = listE;
+	}
+
+	@Override
+	public void execute() {
+		Scanner sc = new Scanner(System.in);
+		String id =  sc.next();
+		listE.deleteId(id);
+	}
+	
+	
+}

@@ -1,0 +1,8 @@
+package demo;
+
+public class Snippet {
+	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	System.out.print("Enter your name: ");
+	String s = br.readLine();
+}
+

@@ -1,0 +1,23 @@
+package finalproject.tdtu;
+
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class SortByName implements StrategySort{
+
+	@Override
+	public <Employee> void sort(ArrayList<Employee> listE) {
+		for (Employee em: listE) {
+//			for (int j = i + 1; j < listE.size(); j++) {
+			if (splitName(listE.get(i).getName()).compareTo(splitName(listE.get(j).getName())) > 0){
+				Collections.swap(listE, i, j);
+			}
+//			}
+		}
+	}
+	public String splitName(String fullname){
+		String name = fullname.substring(fullname.lastIndexOf(" ") + 1);
+		return name;
+	}
+	
+}

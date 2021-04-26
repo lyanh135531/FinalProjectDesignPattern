@@ -1,0 +1,17 @@
+package finalproject.tdtu;
+
+public class FindId implements Command{
+	
+	private ListEmployee listE;
+	
+	public FindId(ListEmployee listE){
+		this.listE = listE;
+	}
+
+	@Override
+	public void execute() {
+		listE.findId(id);
+	}
+	
+	
+}

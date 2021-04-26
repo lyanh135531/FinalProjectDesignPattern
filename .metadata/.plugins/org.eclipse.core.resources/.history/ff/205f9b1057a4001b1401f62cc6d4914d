@@ -1,0 +1,5 @@
+package finalproject.tdtu;
+
+public interface ShowAllEmployee {
+	public void display();
+}

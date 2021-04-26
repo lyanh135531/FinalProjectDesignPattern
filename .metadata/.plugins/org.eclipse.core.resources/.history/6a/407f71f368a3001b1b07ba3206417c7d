@@ -1,0 +1,17 @@
+package finalproject.tdtu;
+
+public class AddNewEmployee implements Command{
+	
+	private ListEmployee listE;
+	
+	public AddNewEmployee(ListEmployee listE){
+		this.listE = listE;
+	}
+
+	@Override
+	public void execute() {
+		listE.input(TypeEmployee type);
+	}
+	
+	
+}

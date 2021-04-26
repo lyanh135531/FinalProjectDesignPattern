@@ -1,0 +1,108 @@
+package finalproject.tdtu;
+
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class ListEmployee {
+	
+	private StrategySort strategy;
+	static ArrayList<Employee> listE = new ArrayList<>();
+	
+	private static ListEmployee instance;
+	
+	public static ListEmployee getInstance() {
+		if (instance == null) {
+			instance = new ListEmployee(); 
+		}
+		return instance;
+	}
+	
+	public void setStrategySort(StrategySort strategy) {
+        this.strategy = strategy;
+    }
+	
+	
+	public void input(TypeEmployee type) {
+		Employee employee = null;
+		switch (type){
+		case EMPLOYEE:
+			employee = new Employee();
+			employee.input();
+			break;
+		case MARKETINGSTAFF:
+			employee = new MarketingStaff();
+			employee.input();
+			break;
+		case LEADER:
+			employee = new Leader();
+			employee.input();
+			break;
+		}
+		listE.add(employee);
+	}
+	
+	public int findId(String id){
+		for (int i = 0; i < listE.size(); i++){
+			if (listE.get(i).getId().equals(id)){
+				listE.get(i).output();
+				return i;
+			}
+		}
+		return -1;
+	}
+	
+	public void deleteId(String id){
+		int pos = findId(id);
+		if (pos < 0){
+			System.out.print("Null");
+		}
+		else {
+			listE.remove(pos);
+		}
+	}
+	
+	public void update(String id){
+		int pos = findId(id);
+		if (pos < 0){
+			System.out.print("Null");
+		}
+		else{
+			Employee emnew = listE.get(pos);
+			listE.set(pos, emnew);
+		}
+	}
+	
+	public void findSalary(double min, double max){
+		for (Employee employee: listE) {
+			if (employee.getSalary() >= min && employee.getSalary() <= max){
+				employee.toString();
+			}
+		}
+	}
+	
+	public void display(){
+		if (this.listE == null) {
+			System.out.print("No Employee!");
+		}
+		else {
+			for (Employee employee: listE) {
+				System.out.println(employee.output());
+			}
+		}
+	}
+	
+	public void sort(){
+		strategy.sort(listE);
+	}
+	
+	public void dummyData(){
+		listE.add(new Employee("E1","Ly Ly Anh",null, 1000));
+		listE.add(new Employee("E2","Ly Ly",null, 2000));
+		listE.add(new Employee("E3","Anh Bao",null, 7000));
+		listE.add(new MarketingStaff("M1","Nguyen Van",null, 1000, 0, 0));
+		listE.add(new MarketingStaff("M2","An Manh",null, 1000, 0, 0));
+		listE.add(new MarketingStaff("M3","Phuong",null, 1000, 0, 0));
+		listE.add(new Leader("L1","Hong Quan",null, 1000, 0));
+		listE.add(new Leader("L2","Minh Tu",null, 1000, 0));
+	}
+}

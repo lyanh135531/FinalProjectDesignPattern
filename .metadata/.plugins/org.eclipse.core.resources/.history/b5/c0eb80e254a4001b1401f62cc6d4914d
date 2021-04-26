@@ -1,0 +1,26 @@
+package finalproject.tdtu;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class UpdateEmployee implements Command{
+	private SingletonList listE;
+	
+	public UpdateEmployee(SingletonList listE){
+		this.listE = listE;
+	}
+
+	@Override
+	public void execute() {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		String id;
+		try {
+			id = br.readLine();
+			listE.update(id);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+	}	
+}

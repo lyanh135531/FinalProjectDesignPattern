@@ -1,0 +1,18 @@
+package finalproject.tdtu;
+
+import java.util.Scanner;
+
+public abstract class InOut {
+	Scanner sc = new Scanner(System.in);
+	public void input(){
+		System.out.print("Enter ID:");
+		String id = sc.nextLine();
+		System.out.print("Enter name:");
+		String name = sc.nextLine();
+		System.out.print("Enter phone:");
+		int phone = sc.nextLine();
+		System.out.print("Enter salary:");
+		double salary = sc.nextFloat();
+	}
+	public void output();
+}

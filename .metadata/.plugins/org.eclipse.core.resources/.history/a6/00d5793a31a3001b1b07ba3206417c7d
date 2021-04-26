@@ -1,0 +1,10 @@
+package finalproject.tdtu;
+
+public class SortByName implements StrategySort{
+
+	@Override
+	public void sort() {
+		
+	}
+	
+}
